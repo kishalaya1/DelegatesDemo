@@ -8,4 +8,5 @@ static void Demo()
     
     DelegatesExample.SimpleDelegate();
     DelegatesExample.MultiCastDelegate();
+    DelegatesExample.MutlipleMethodReturnTypeDemo();
 }

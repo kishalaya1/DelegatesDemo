@@ -39,8 +39,35 @@ namespace Entities
             multiTipleChannels();
             Console.WriteLine("Multicast Delegate Example demo end ----");
         }
-        
-        
+
+
+        #endregion
+
+        #region MutipleMethodReturnType 
+
+        public delegate Channel GetChannelInfo(string channelName,string description);
+
+        public static Channel GetIndianChannel(string channelName, string description) { 
+            return new Channel { Name = channelName, Description = description , Type = "Indian" };
+        }
+        public static Channel GetForeignChannel(string channelName, string description)
+        {
+            return new Channel { Name = channelName, Description = description, Type = "Foreign" };
+        }
+        public static void MutlipleMethodReturnTypeDemo()
+        {
+            Console.WriteLine("Delegates with return type demo start ----");
+            //first assign first method to the delegate
+            GetChannelInfo channelInfo = GetIndianChannel;
+            var channelFirst = channelInfo("Zee TV", "A popular Indian entertainment channel");
+            Console.WriteLine("The details of the channel are as follows : \n Name -" + channelFirst.Name + "\n Description -" + channelFirst.Description + "\n Type -" + channelFirst.Type);
+            // adding multiple methods to the same delegate
+            channelInfo = GetForeignChannel;
+            /// Now when we invoke the delegate, it will call all the methods assigned to it
+            var channelSecond = channelInfo("HBO", "A popular Foreign entertainment channel");
+            Console.WriteLine("The details of the channel are as follows : \n Name -" + channelSecond.Name + "\n Description -" + channelSecond.Description + "\n Type -" + channelSecond.Type);
+            Console.WriteLine("Delegates with return type demo end ----");
+        }
         #endregion
     }
 }
