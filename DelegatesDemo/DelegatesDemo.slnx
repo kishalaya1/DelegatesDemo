@@ -3,5 +3,6 @@
     <File Path="../.gitignore" />
     <File Path="../README.md" />
   </Folder>
+  <Project Path="../Entities/Entities.csproj" Id="66f27a50-1064-461d-aa98-285734ce596d" />
   <Project Path="DelegatesDemo.csproj" />
 </Solution>
