@@ -1,4 +1,5 @@
 ﻿using System;
+using DelegatesDemo;
 using Entities;
 
 Console.WriteLine("Hello, World!");
@@ -9,4 +10,5 @@ static void Demo()
     DelegatesExample.SimpleDelegate();
     DelegatesExample.MultiCastDelegate();
     DelegatesExample.MutlipleMethodReturnTypeDemo();
+    EventsExample.Run();
 }
